@@ -199,7 +199,7 @@ streamlit run app.py
 
 ## Author
 
-Arghadeep Ghosh
+Arghadeep Ghosh(AIML-A6-May-10348)
 Ankita Dey(AIML-A6/May-9814)
 
 B.Tech CSE, KIIT University
