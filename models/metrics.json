@@ -1,5 +1,5 @@
 {
-    "accuracy": 0.7768,
-    "cv_mean": 0.783,
-    "cv_std": 0.0108
+    "accuracy": 0.7882,
+    "cv_mean": 0.7908,
+    "cv_std": 0.0078
 }

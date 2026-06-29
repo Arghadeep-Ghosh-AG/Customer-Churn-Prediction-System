@@ -1,10 +1,9 @@
 import pandas as pd
 import joblib
-
 from sklearn.preprocessing import LabelEncoder
 
 
-def preprocess_data(df):
+def preprocess_data(df, save_encoders=False):
 
     # Convert TotalCharges to numeric
     df["TotalCharges"] = pd.to_numeric(
@@ -56,17 +55,16 @@ def preprocess_data(df):
 
         encoder = LabelEncoder()
 
-        df[col] = encoder.fit_transform(
-            df[col]
-        )
+        df[col] = encoder.fit_transform(df[col])
 
         encoders[col] = encoder
 
-    # Save all encoders
-    joblib.dump(
-        encoders,
-        "models/encoders.pkl"
-    )
+    # Save encoders ONLY while training
+    if save_encoders:
+        joblib.dump(
+            encoders,
+            "models/encoders.pkl"
+        )
 
     # Separate Features and Target
     X = df.drop("Churn", axis=1)
